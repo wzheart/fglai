@@ -18,6 +18,7 @@
 	</buildSpec>
 	<natures>
 		<nature>com.pandora.projects.ui.MKeyNature</nature>
+		<nature>com.aptana.projects.webnature</nature>
 	</natures>
 	<filteredResources>
 		<filter>

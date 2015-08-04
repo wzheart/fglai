@@ -6,40 +6,52 @@
 	    <script src="js/mui.min.js"></script>
 	    <link href="css/mui.min.css" rel="stylesheet"/>
 	    <script type="text/javascript" charset="utf-8">
-	      	mui.init();
+	      	mui.init({
+	      		subpages:[{
+			      url:"page/indexContent.html",//子页面HTML地址，支持本地地址和网络地址
+			      id:"listcontent",//子页面标志
+			      styles:{
+			        top:'45px',//mui标题栏默认高度为45px；
+        			bottom:'45px'//默认为0px，可不定义；
+			      }
+			    }]
+	      	});
 	    </script>
 	</head>
 	<body>
-		<div class="mui-content">
-			<div class="mui-slider">
-				<div class="mui-slider-group mui-slider-loop">
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/muwu.jpg"></a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/cbd.jpg"></a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
-					</div>
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
-					</div>
-				</div>
-				<div class="mui-slider-indicator">
-					<div class="mui-indicator mui-active"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
-				</div>
-			</div>
+		<header class="mui-bar mui-bar-nav">
+		  <button class="mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+		   上海<span class="mui-icon mui-icon-arrowdown"></span>
+		  </button>
+		  <h1 class="mui-title">福龟来</h1>
+		</header>
+		<div class="mui-content" id="listcontent">
+	        <br /><br /><br /><br />
+	        <div id="divloading" style="text-align: center;">正在加载....</div>
 		</div>
+		<!--
+        	作者：wzheart@sina.com
+        	时间：2015-08-04
+        	描述：底部信息
+        -->
+		<nav class="mui-bar mui-bar-tab">
+		  <a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon mui-icon-phone"></span>
+				<span class="mui-tab-label">电话咨询</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-chat"></span>
+				<span class="mui-tab-label">在线咨询</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-sms">
+				<span class="mui-icon mui-icon-sms"></span>
+				<span class="mui-tab-label">短信咨询</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map">
+				<span class="mui-icon mui-icon-map"></span>
+				<span class="mui-tab-label">查看地图</span>
+			</a>
+		</nav>
 		<script src="js/mui.min.js"></script>
 	</body>
 </html>
