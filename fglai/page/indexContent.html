@@ -1,138 +1,136 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <script src="../js/mui.min.js"></script>
-    <link href="../css/mui.min.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-    </script>
-    <style type="text/css">
-    	.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
-    		font-size: 12px;
-    	}
-    	a{
-    		font-size: 12px;
-    	}
-    </style>
-</head>
-<body>
-	<!--
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+				font-size: 12px;
+			}
+			a {
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--
             	作者：wzheart@sina.com
             	时间：2015-08-04
             	描述：轮播图片
             -->
-			<div class="mui-slider" style="height: 150px;">
-				<div class="mui-slider-group mui-slider-loop">
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/muwu.jpg"></a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/cbd.jpg"></a>
-					</div>
-					<div class="mui-slider-item">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
-					</div>
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
-					</div>
+		<div class="mui-slider" style="height: 150px;">
+			<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
 				</div>
-				<div class="mui-slider-indicator">
-					<div class="mui-indicator mui-active"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/muwu.jpg"></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/cbd.jpg"></a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
+				</div>
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
 				</div>
 			</div>
-			
-			<!--
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+
+		<!--
             	作者：wzheart@sina.com
             	时间：2015-08-04
             	描述：按钮组
             -->
-			<ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: white;">
-				<li class="mui-table-view-cell mui-media mui-col-xs-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-compose"></span>
-						<div class="mui-media-body">评测中心</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-email"></span>
-						<div class="mui-media-body">用户报告</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-videocam"></span>
-						<div class="mui-media-body">理财报表</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-location"></span>
-						<div class="mui-media-body">每日签到</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-home"></span>
-						<div class="mui-media-body">理财港湾</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-list"></span>
-						<div class="mui-media-body">理财排行</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-mic"></span>
-						<div class="mui-media-body">公告中心</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-3">
-					<a href="#">
-						<span class="mui-icon mui-icon-loop"></span>
-						<div class="mui-media-body">每日一更</div>
-					</a>
-				</li>
-			</ul>
-			
-			<!--
+		<ul class="mui-table-view mui-grid-view mui-grid-9" style="background-color: white;">
+			<li class="mui-table-view-cell mui-media mui-col-xs-3">
+				<a href="#" id="testHome" name="testHome">
+					<span class="mui-icon mui-icon-compose"></span>
+					<div class="mui-media-body">评测中心</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-3">
+				<a href="#" id="userReport" name="userReport">
+					<span class="mui-icon mui-icon-email"></span>
+					<div class="mui-media-body">用户报告</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-3">
+				<a href="#" id="financeReportCenter" name="financeReportCenter">
+					<span class="mui-icon mui-icon-videocam"></span>
+					<div class="mui-media-body">理财报表</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-3">
+				<a href="#" id="checkDay" name="checkDay">
+					<span class="mui-icon mui-icon-location"></span>
+					<div class="mui-media-body">每日签到</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-3">
+				<a href="#" id="financeCommunity" name="financeCommunity">
+					<span class="mui-icon mui-icon-home"></span>
+					<div class="mui-media-body">理财港湾</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-3">
+				<a href="#" id="financeRankings" name="financeRankings">
+					<span class="mui-icon mui-icon-list"></span>
+					<div class="mui-media-body">理财排行</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-3">
+				<a href="#" id="msgCenter" name="msgCenter">
+					<span class="mui-icon mui-icon-mic"></span>
+					<div class="mui-media-body">公告中心</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-3">
+				<a href="#" id="update" name="update">
+					<span class="mui-icon mui-icon-loop"></span>
+					<div class="mui-media-body">每日一更</div>
+				</a>
+			</li>
+		</ul>
+
+		<!--
             	作者：wzheart@sina.com
             	时间：2015-08-04
             	描述：推荐信息
             -->
-            <hr color="#DDDDDD" style="height: 6px;">
-			<ul class="mui-table-view mui-table-view-chevron">
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
-						<!--<span class="mui-badge">15</span>-->
-						测试自己什么时候成为百万富翁
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
+		<hr color="#DDDDDD" style="height: 6px;">
+		<ul class="mui-table-view mui-table-view-chevron">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					<!--<span class="mui-badge">15</span>-->
+					测试自己什么时候成为百万富翁
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
 						理财排行榜
 					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
 						今日推荐:福龟宝（6.6%）
 					</a>
-				</li>
-			</ul>
+			</li>
+		</ul>
 		</div>
 		<hr color="#DDDDDD" style="height: 6px;">
 		<!--
@@ -140,7 +138,7 @@
         	时间：2015-08-04
         	描述：推荐文章列表 - 5行
         -->
-        <p></p>
+		<p></p>
 		<ul class="mui-table-view">
 			<li class="mui-table-view-cell mui-hidden">cared
 				<div id="M_Toggle" class="mui-switch mui-active">
@@ -184,8 +182,179 @@
 				</a>
 			</li>
 		</ul>
-		
-		
+
 		<script src="../js/mui.min.js"></script>
-</body>
+		<script type="text/javascript">
+			mui.init();
+			
+			document.getElementById("testHome").addEventListener('tap', function() {
+				//打开页面
+				mui.openWindow({
+					url: '/page/testCenter/testHome.html',
+					id: 'testHome',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '0px' //新页面底部位置
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right' //页面显示动画，默认为”slide-in-right“；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+			
+			document.getElementById("checkDay").addEventListener('tap', function() {
+				//打开页面
+				mui.openWindow({
+					url: '/page/checkDay/checkHome.html',
+					id: 'checkDay',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '0px' //新页面底部位置
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right' //页面显示动画，默认为”slide-in-right“；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+			
+			document.getElementById("financeCommunity").addEventListener('tap', function() {
+				//打开页面
+				mui.openWindow({
+					url: '/page/financeCommunity/communityHome.html',
+					id: 'financeCommunity',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '0px' //新页面底部位置
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right' //页面显示动画，默认为”slide-in-right“；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+			
+			document.getElementById("financeRankings").addEventListener('tap', function() {
+				//打开页面
+				mui.openWindow({
+					url: '/page/financeRankings/rankingsHome.html',
+					id: 'financeRankings',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '0px' //新页面底部位置
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right' //页面显示动画，默认为”slide-in-right“；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+			
+			document.getElementById("financeReportCenter").addEventListener('tap', function() {
+				//打开页面
+				mui.openWindow({
+					url: '/page/financeReportCenter/financeReportHome.html',
+					id: 'financeReportCenter',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '0px' //新页面底部位置
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right' //页面显示动画，默认为”slide-in-right“；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+			
+			document.getElementById("msgCenter").addEventListener('tap', function() {
+				//打开页面
+				mui.openWindow({
+					url: '/page/msgCenter/msgHome.html',
+					id: 'msgCenter',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '0px' //新页面底部位置
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right' //页面显示动画，默认为”slide-in-right“；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+			
+			document.getElementById("update").addEventListener('tap', function() {
+				//打开页面
+				mui.openWindow({
+					url: '/page/update/updateHome.html',
+					id: 'update',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '0px' //新页面底部位置
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right' //页面显示动画，默认为”slide-in-right“；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+			
+			document.getElementById("userReport").addEventListener('tap', function() {
+				//打开页面
+				mui.openWindow({
+					url: '/page/userReport/userReportHome.html',
+					id: 'userReport',
+					styles: {
+						top: '0px', //新页面顶部位置
+						bottom: '0px' //新页面底部位置
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right' //页面显示动画，默认为”slide-in-right“；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+		</script>
+	</body>
+
 </html>
