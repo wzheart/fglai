@@ -189,6 +189,7 @@
 		<script src="../js/mui.min.js"></script>
 		
 		<script>
+			var opened = false;
 			var aniShow = "pop-in";
 			 //只有ios支持的功能需要在Android平台隐藏；
 			if (mui.os.android) {
@@ -204,7 +205,7 @@
 				}
 			}
 			//初始化，并预加载webview模式的选项卡			
-			/*function preload () {
+			function preload () {
 				mui.preload({url:'examples/tab-webview-main.html'});
 				mui.preload({
 					url:"examples/pullrefresh_main.html",
@@ -212,7 +213,7 @@
 						popGesture:'hide'
 					}
 				});
-			}*/
+			}
 			var templates = {};
 			var getTemplate = function(name, header, content) {
 				var template = templates[name];
@@ -278,16 +279,16 @@
 					preload();
 				}else{
 					//显示启动导航
-					/*mui.openWindow({
+					mui.openWindow({
 						id:'guide',
-						url:'examples/guide.html',
+						url:'guide/guide.html',
 						show:{
 							aniShow:'none'
 						},
 						waiting:{
 							autoShow:false
 						}
-					});*/
+					});
 					//延迟的原因：优先打开启动导航页面，避免资源争夺
 					setTimeout(function () {
 						//初始化模板
@@ -302,6 +303,9 @@
 				var id = this.getAttribute('href');
 				var href = this.href;
 				var type = this.getAttribute("open-type");
+				if(opened){
+					return;
+				}
 				//不使用父子模板方案的页面
 				if (type == "common") {
 					var webview_style = {
@@ -350,6 +354,7 @@
 						//获得共用子webview
 						var contentWebview = template.content;
 						var title = this.innerText.trim();
+						opened = true;
 						//通知模板修改标题，并显示隐藏右上角图标；
 						mui.fire(headerWebview, 'updateHeader', {
 							title: title,
@@ -369,13 +374,16 @@
 							} else {
 								reload = false;
 							}
+							setTimeout("checkOpened()",200); 
 							(!reload) && contentWebview.show();
-							
 							headerWebview.show(aniShow, 150);
 						}
 					}
 				}
 			});
+			function checkOpened(){
+				opened = false;
+			};
 			var index = null; //主页面
 			function openMenu() {
 				!index && (index = mui.currentWebview.parent());

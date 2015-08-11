@@ -12,7 +12,7 @@
 		  <button class="mui-btn mui-btn-link mui-btn-nav mui-pull-left">
 		   上海<span class="mui-icon mui-icon-arrowdown"></span>
 		  </button>
-		  <h1 class="mui-title">福龟来</h1>
+		  <h1 class="mui-title" id="title">福龟</h1>
 		</header>
 		<div class="mui-content" id="listcontent">
 	        <br /><br /><br /><br />
@@ -24,44 +24,62 @@
         	描述：底部信息
         -->
 		<nav class="mui-bar mui-bar-tab">
-		  <a class="mui-tab-item mui-active" href="#">
+		  <a class="mui-tab-item mui-active" href="page/indexContent.html">
 				<span class="mui-icon mui-icon-home"></span>
-				<span class="mui-tab-label">首页</span>
+				<span class="mui-tab-label">福龟</span>
 			</a>
-			<a class="mui-tab-item" href="#">
+			<a class="mui-tab-item" href="page/financeCenter/financeCenter.html">
 				<span class="mui-icon mui-icon-star"></span>
 				<span class="mui-tab-label">理财中心</span>
 			</a>
-			<a class="mui-tab-item" href="#">
+			<a class="mui-tab-item" href="page/userCenter/userCenter.html">
 				<span class="mui-icon mui-icon-person"></span>
 				<span class="mui-tab-label">用户中心</span>
 			</a>
-			<a class="mui-tab-item" href="#">
+			<a class="mui-tab-item" href="page/indexMore/indexMore.html">
 				<span class="mui-icon mui-icon-more"></span>
 				<span class="mui-tab-label">更多..</span>
 			</a>
 		</nav>
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
+		
+			mui.init(
+//				{
+//				swipeBack: false,
+//				gestureConfig: {
+//					doubletap: true
+//				},
+//	      		subpages:[{
+//	      		  url:"page/indexContent.html",
+////			      url:"page/indexContent.html",//子页面HTML地址，支持本地地址和网络地址
+//			      id:"listcontent",//子页面标志
+//			      styles:{
+//			        top:'45px',//mui标题栏默认高度为45px；
+//      			bottom:'45px',//默认为0px，可不定义；
+//					bounce: 'vertical'
+//			      }
+//			    }]
+//	      	}
+			);
+	      	
+	      	
 			var menu = null,
 			main = null;
 			var showMenu = false;
-			mui.init({
-				swipeBack: false,
-				gestureConfig: {
-					doubletap: true
-				},
-	      		subpages:[{
-	      		  url:"page/indexContent.html",
-//			      url:"page/indexContent.html",//子页面HTML地址，支持本地地址和网络地址
-			      id:"listcontent",//子页面标志
-			      styles:{
-			        top:'45px',//mui标题栏默认高度为45px；
-        			bottom:'45px',//默认为0px，可不定义；
-					bounce: 'vertical'
-			      }
-			    }]
-	      	});
+			
+			//预加载首页其他webview
+			var subpages = ['page/indexContent.html','page/financeCenter/financeCenter.html', 'page/userCenter/userCenter.html', 'page/indexMore/indexMore.html'];
+			var subpage_style = {
+				top: '45px',
+				bottom: '45px'
+			};
+			
+			var aniShow = {};
+			
+			
+			
+			
 			 
 			mui.plusReady(function() {
 				//仅支持竖屏显示
@@ -83,7 +101,61 @@
 						}
 					});
 				}, 200);
+				
+				
+				
+				var self = plus.webview.currentWebview();
+				for (var i = 0; i < 4; i++) {
+					var temp = {};
+					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+					if (i > 0) {
+						sub.hide();
+					}else{
+						temp[subpages[i]] = "true";
+						mui.extend(aniShow,temp);
+					}
+					self.append(sub);
+				}
 			});
+			
+			//当前激活选项
+			var activeTab = subpages[0];
+			var title = document.getElementById("title");
+			 //选项卡点击事件
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				var targetTab = this.getAttribute('href');
+				if (targetTab == activeTab) {
+					return;
+				}
+				//更换标题
+				title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+				//显示目标选项卡
+				if(mui.os.ios||aniShow[targetTab]){
+					plus.webview.show(targetTab);
+				}else{
+					var temp = {};
+					temp[targetTab] = "true";
+					mui.extend(aniShow,temp);
+					plus.webview.show(targetTab,"fade-in",300);
+				}
+				//隐藏当前;
+				plus.webview.hide(activeTab);
+				//更改当前活跃的选项卡
+				activeTab = targetTab;
+			});
+			 //自定义事件，模拟点击“首页选项卡”
+			document.addEventListener('gohome', function() {
+				var defaultTab = document.getElementById("defaultTab");
+				//模拟首页点击
+				mui.trigger(defaultTab, 'tap');
+				//切换选项卡高亮
+				var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
+				if (defaultTab !== current) {
+					current.classList.remove('mui-active');
+					defaultTab.classList.add('mui-active');
+				}
+			});
+			
 			
 			
 			var isInTransition = false;
